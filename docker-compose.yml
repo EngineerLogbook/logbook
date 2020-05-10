@@ -1,0 +1,25 @@
+version: "3.7"
+
+services:
+
+
+  django:
+    build: ./engbook
+    container_name: backend
+    restart: always
+    volumes: 
+      - ./engbook/static/:/bkserver/static
+    environment: 
+      - APP_NAME=LogbookBackend
+    # command: pip install -r requirements.txt
+    expose:
+      - 8080
+  
+  nginx:
+    build: ./webserver
+    container_name: webserver-nginx
+    restart: always
+    volumes: 
+      - ./engbook/static/:/staticroot
+    ports: 
+      - "80:80"
