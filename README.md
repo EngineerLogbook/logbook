@@ -39,5 +39,6 @@ This project is licensed under the GNU-GENERAL-PUBLIC-LICENSE - see the [LICENSE
 
 ## Acknowledgments 💯
 
-* Sanjeev Bedi Sir - University of Waterloo 
-* Professors from Thapar Institute of Engineering and Technology Patiala
+* [Dr Sanjeev Bedi](https://uwaterloo.ca/engineering-ideas-clinic/people-profiles/sanjeev-bedi-peng) - Professor, University of Waterloo 
+* [Dr Ajay Batish](http://www.thapar.edu/faculties/view/Dr.-Ajay-Batish/MTQy/Nw==) - Professor, Thapar Institute of Engineering & Technology
+* [Mr A S Jawanda](http://thapar.edu/faculties/view/A.-S.-Jawanda/MTU4/MTY=) - Associate Professor, Thapar Institute of Engineering & Technology
