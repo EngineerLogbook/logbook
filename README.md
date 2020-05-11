@@ -1,10 +1,12 @@
-# Engineering LogBook Project  🚀
+# Engineering LogBook Project 🔖
 
 The Plan is to build an Application for People to log there projects and manage it 
 
 ## About  💫
 
-The project is to bring significant value to the people who use it and also 
+The project is to bring significant value to the people who use it and manage capstone projects in our campus.
+The plan is to be something similar to branching and versioning to other engineering projects 
+Currently this project make it simple for you to create logs and add maintain engineering projects and make Teams 
 
 ## Contribution 🎛
 
