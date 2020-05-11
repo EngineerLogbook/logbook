@@ -31,8 +31,13 @@ The page will reload if you make edits.<br />
 
 - Start the production server (nginx)
 ```sudo docker-compose up --build```
-Runs the backend server, bound to 0.0.0.0:80
+Runs the backend server, bound to 0.0.0.0:80. This will NOT hot reload, and needs sudo permissions to run. Do not use this with debug=True in the .env file. 
+
 Open [http://localhost](http://localhost) to view it in the browser. 
+
+To spin down : 
+```sudo docker-compose down --remove-orphans```
+
 
 
 ## Setup and running of project (Frontend)
