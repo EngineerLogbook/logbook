@@ -31,7 +31,8 @@ The page will reload if you make edits.<br />
 
 - Start the production server (nginx)
 ```sudo docker-compose up --build```
-Runs the backend server, bound to 0.0.0.0:80
+Runs the backend server, bound to 0.0.0.0:80.
+
 Open [http://localhost](http://localhost) to view it in the browser. 
 
 
