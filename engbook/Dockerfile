@@ -11,6 +11,7 @@ ADD . /bkserver
 
 # Install dependencies
 RUN pip install -r requirements.txt
+RUN pip install uwsgi
 
 
 # run the command to start the WSGI server
