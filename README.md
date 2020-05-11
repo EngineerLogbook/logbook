@@ -1,12 +1,12 @@
 # Engineering LogBook Project  🚀
 
-The Plan is to build an Applicattion for People to log there projects and manage it 
+The Plan is to build an Application for People to log there projects and manage it 
 
 ## About  💫
 
 The project is to bring significant value to the people who use it and also 
 
-## Contributon 🎛
+## Contribution 🎛
 
 * We would be more than elated to have PR from anyone, also outside community to grow the project. 
 * If any bug fixes are are required and feature needs building please raise Issues and our team would respond quickly
@@ -38,4 +38,4 @@ This project is licensed under the GNU-GENERAL-PUBLIC-LICENSE - see the [LICENSE
 ## Acknowledgments 💯
 
 * Sanjeev Bedi Sir - University of Waterloo 
-* Proffesors from Thapar Institute of Engineering and Technology Patiala
+* Professors from Thapar Institute of Engineering and Technology Patiala
