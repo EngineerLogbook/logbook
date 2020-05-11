@@ -1,0 +1,25 @@
+This repository contains code for the project in Django (Backend) & React (Frontend)
+
+## Current goals for the project are:
+
+Frontend
+
+    1. UI Frameworks to Build ON.
+    2. Create a rough layout in Adobe XD.
+    3. Start laying out frontend pages 
+
+Backend
+
+    1. Create a flowchart / diagram for whole process in Draw.io 
+
+Mobile App
+
+    1. Finalise between React Native / Flutter 
+    2. Create Another Repository for Mobile Application 
+    3. Start Creating Workflows and Mobile Views in the Development Process
+
+DevelOps Work 
+
+    1. Containerize the Application in Docker
+    2. Setup Travis for Testing
+   
