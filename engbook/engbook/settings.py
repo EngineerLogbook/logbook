@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'graphene_django',
     'rest_framework',
     'frontend',
-    'log'
+    'log',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
