@@ -3,8 +3,49 @@ import uuid
 from django.contrib.auth.models import User
 
 from django.utils.text import slugify
-from log.models import DesignBaseClass
+
 # Create your models here.
+
+
+class DesignBaseClass(models.Model):
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
+    title = models.CharField(max_length=127)
+    slug = models.SlugField(max_length=255)
+    date_created = models.DateTimeField(auto_now_add=True)
+    published = models.BooleanField(default=True)
+    reviewed = models.BooleanField(default=False)
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return f'{self.title}'
+
+    def save(self, *args, **kwargs):
+        # Slugify the name for the URL
+        self.slug = slugify(self.name)
+        super(DesignBaseClass, self).save(*args, **kwargs)
+
+    def publishedFlip(self, *args, **kwargs):
+        """
+        Published Flip Switch
+        """
+        self.published = not self.published
+        try:
+            self.save(*args, **kwargs)
+        except:
+            ValidationError("Internal Server Error")
+
+    def reviewFlip(self, *args, **kwargs):
+        """
+        Published revied Flip
+        """
+        self.reviewed = not self.reviewed
+        try:
+            self.save(*args, **kwargs)
+        except:
+            ValidationError("Internal Server Error")
 
 
 class Team(DesignBaseClass):
@@ -14,7 +55,7 @@ class Team(DesignBaseClass):
     description = models.CharField(max_length=255)
     members = models.ManyToManyField(User)
     token = models.UUIDField(
-        primary_key=True, default=uuid.uuid4)  # email joining
+        default=uuid.uuid4)  # email joining
 
     def checkMembers(self):
         """
@@ -31,9 +72,10 @@ class Project(DesignBaseClass):
         Project Models 
     """
 
-    team = models.ForeignKey(Team, on_delete=models.PROTECT)
+    team = models.ForeignKey(
+        Team,  on_delete=models.PROTECT)
     access_token = models.UUIDField(
-        primary_key=True, default=uuid.uuid4)
+        default=uuid.uuid4)
 
     description = models.TextField(max_length=512)
 
