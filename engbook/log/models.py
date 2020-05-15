@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 import uuid
 from project.models import Team, Project, DesignBaseClass
 from django.utils.text import slugify
-from django.core.exceptions import ValidationError
+
 
 # Create your models here.
 

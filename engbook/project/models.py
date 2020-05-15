@@ -1,7 +1,7 @@
 from django.db import models
 import uuid
 from django.contrib.auth.models import User
-
+from django.core.exceptions import ValidationError
 from django.utils.text import slugify
 
 # Create your models here.
