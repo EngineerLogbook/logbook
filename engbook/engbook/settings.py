@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'frontend',
     'log',
+    'project',
     'django_extensions',
 ]
 
