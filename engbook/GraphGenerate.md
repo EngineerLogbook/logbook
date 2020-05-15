@@ -1,0 +1,1 @@
+https://django-extensions.readthedocs.io/en/latest/graph_models.html#default-settings
