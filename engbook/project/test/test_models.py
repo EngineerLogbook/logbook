@@ -1,9 +1,10 @@
 from django.test import TestCase
 from project.models import Project, Team
 from django.contrib.auth.models import User
-from engbook.settings import BASE_DIR, os
 from django.core.files import File
-import datetime
+import datetime,mock
+from django.core.files.uploadedfile import SimpleUploadedFile
+
 
 class TestModels(TestCase):
 
@@ -36,8 +37,7 @@ class TestModels(TestCase):
         self.assertEquals(self.testteam.date_created.date(), datetime.date.today())
        
     def test_team_user_assignment(self):
-        self.assertEquals(self.testteam.members.all()[0].email, 'testingthemail@example.com')
-        self.assertEquals(self.testteam.members.all()[1].username, 'testuser2')
+        self.assertEquals(list(self.testteam.members.all()), [self.testuser1,self.testuser2])
 
 
     # Project tests
@@ -46,14 +46,26 @@ class TestModels(TestCase):
 
     def test_project_date_creation(self):
         self.assertEquals(self.testproject.date_created.date(), datetime.date.today())
-       
+    
+    # If this doesn't error out, file uploading was successful       
     def test_project_image(self):
-        self.testproject.image.save('test.png', File(
-            open(os.path.join(BASE_DIR, 'project', 'test', 'image.png'), 'rb')))
+        file_mock = mock.MagicMock(spec=File)
+        file_mock.name = 'test.png'
+                
+        self.testproject.image = file_mock
+        self.testproject.save()
+        
+        self.assertIsNotNone(self.testproject.image)
 
+    # If this doesn't error out, file uploading was successful       
     def test_project_logo(self):
-        self.testproject.logo.save('test.png', File(
-            open(os.path.join(BASE_DIR, 'project', 'test', 'image.png'), 'rb')))
+        file_mock = mock.MagicMock(spec=File)
+        file_mock.name = 'test.png'
+                
+        self.testproject.logo = file_mock
+        self.testproject.save()
+        
+        self.assertIsNotNone(self.testproject.logo)
 
     def test_project_team_assignment(self):
-        self.assertEquals(self.testproject.team.title, 'Test Team')
+        self.assertEquals(self.testproject.team, self.testteam)

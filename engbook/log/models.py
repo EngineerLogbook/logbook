@@ -1,9 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
-import uuid,datetime
+import uuid
 from project.models import Team, Project, DesignBaseClass
 from django.utils.text import slugify
-
+from django.utils import timezone
 
 # Create your models here.
 
@@ -22,7 +22,7 @@ class Logger(DesignBaseClass):
 
     def save(self, *args, **kwargs):
         # Slugify the name for the URL
-        self.date_modified = datetime.datetime.now()
+        self.date_modified = timezone.now()
         super(Logger, self).save(*args, **kwargs)
 
 

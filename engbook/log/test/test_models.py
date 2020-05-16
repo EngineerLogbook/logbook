@@ -2,9 +2,8 @@ from django.test import TestCase
 from log.models import Logger, LogFile, LogURL
 from project.models import Team,Project
 from django.contrib.auth.models import User
-from engbook.settings import BASE_DIR, os
 from django.core.files import File
-import datetime
+import datetime, mock
 
 class TestModels(TestCase):
 
@@ -36,34 +35,37 @@ class TestModels(TestCase):
 
         )
 
-    def test_log(self):
-        pass
-    # # Team tests
-    # def test_team_creation_and_slug(self):        
-    #     self.assertEquals(self.testteam.slug, 'test-team')
+    # Log tests
+    def test_log_creation_and_slug(self):        
+        self.assertEquals(self.testlog.slug, 'test-log')
 
-    # def test_team_date_creation(self):
-    #     self.assertEquals(self.testteam.date_created.date(), datetime.date.today())
+    def test_log_date_creation_and_modification(self):
+        self.assertEquals(self.testlog.date_created.date(), datetime.date.today())
+        self.testlog.title="Test Log Modified"
+        self.testlog.save()
+        self.assertTrue(self.testlog.date_created < self.testlog.date_modified)
        
-    # def test_team_user_assignment(self):
-    #     self.assertEquals(self.testteam.members.all()[0].email, 'testingthemail@example.com')
-    #     self.assertEquals(self.testteam.members.all()[1].username, 'testuser2')
+    def test_log_user_assignment(self):
+        self.assertEquals(self.testlog.user, self.testuser1)
 
+    def test_log_project_assignment(self):
+        self.assertEquals(self.testlog.project, self.testproject)
+    
+    def test_log_file_assosciation(self):
+        file_mock = mock.MagicMock(spec=File)
+        file_mock.name = 'test.pdf'
+        
+        self.logfile = LogFile.objects.create(
+            title='testfile',
+            file=file_mock,
+            log=self.testlog
+        )
+        self.assertEquals(Logger.objects.filter(logfile__title='testfile').first(), self.testlog) 
 
-    # # Project tests
-    # def test_project_creation_and_slug(self):
-    #     self.assertEquals(self.testproject.slug, 'test-project')
-
-    # def test_project_date_creation(self):
-    #     self.assertEquals(self.testproject.date_created.date(), datetime.date.today())
-       
-    # def test_project_image(self):
-    #     self.testproject.image.save('test.png', File(
-    #         open(os.path.join(BASE_DIR, 'project', 'test', 'image.png'), 'rb')))
-
-    # def test_project_logo(self):
-    #     self.testproject.logo.save('test.png', File(
-    #         open(os.path.join(BASE_DIR, 'project', 'test', 'image.png'), 'rb')))
-
-    # def test_project_team_assignment(self):
-    #     self.assertEquals(self.testproject.team.title, 'Test Team')
+    def test_log_url_assosciation(self):
+        self.logurl = LogURL.objects.create(
+            url="https://google.com",
+            log=self.testlog
+        )
+        self.assertEquals(Logger.objects.filter(logurl__url="https://google.com").first(), self.testlog) 
+               
