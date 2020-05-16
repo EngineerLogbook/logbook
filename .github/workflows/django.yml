@@ -34,7 +34,7 @@ jobs:
       run: |
         python -m pip install wheel
         python -m pip install --upgrade pip
-        pip install -r engbook/test_requirements.txt
+        pip install -r engbook/requirements.txt
     - name: Run Tests
       run: |
         cd engbook
