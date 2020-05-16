@@ -6,14 +6,23 @@ from .models import Team, Project
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    list_display = (
-        'id',
-        'title',
+    exclude = (
         'slug',
         'date_created',
         'published',
         'reviewed',
+        
+    )
+    list_display = (
+
+        'title',
         'description',
+        'date_created',
+
+        'id',
+        'slug',
+        'published',
+        'reviewed',
         'token',
     )
     list_filter = ('date_created', 'published', 'reviewed')

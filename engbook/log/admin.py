@@ -6,16 +6,14 @@ from .models import Logger, LogFile, LogURL
 
 @admin.register(Logger)
 class LoggerAdmin(admin.ModelAdmin):
+    exclude=('slug','published','reviewed', 'date_created','date_modified',)
     list_display = (
         'id',
         'title',
-        'slug',
-        'date_created',
         'published',
         'reviewed',
         'note',
         'user',
-        'date_modified',
         'project',
     )
     list_filter = (

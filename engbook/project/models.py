@@ -24,7 +24,7 @@ class DesignBaseClass(models.Model):
 
     def save(self, *args, **kwargs):
         # Slugify the name for the URL
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.title)
         super(DesignBaseClass, self).save(*args, **kwargs)
 
     def publishedFlip(self, *args, **kwargs):
