@@ -26,8 +26,6 @@ jobs:
     - name: Set up Environment
       run: |
         cp .env.example engbook/.env
-        export KEY=`python -c 'import random; result = "".join([random.choice("abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)") for i in range(50)]); print(result)'`
-        sed "s/YOUR SECRET_KEY/$KEY/g" engbook/.env -i
         sed "s/DEBUG=/DEBUG=False/g" engbook/.env -i
 
     - name: Install Dependencies
