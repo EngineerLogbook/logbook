@@ -3,6 +3,7 @@ from django.contrib import admin
 
 from .models import Logger, LogFile, LogURL
 
+
 class LogFileInLine(admin.TabularInline):
     model = LogFile
     fields = (
@@ -11,8 +12,9 @@ class LogFileInLine(admin.TabularInline):
         'filetype',
 
     )
-    extra=1
-    verbose_name="Attachment"
+    extra = 1
+    verbose_name = "Attachment"
+
 
 class LogURLInline(admin.TabularInline):
     model = LogURL
@@ -20,9 +22,10 @@ class LogURLInline(admin.TabularInline):
         'url',
         'id',
     )
-    extra=1
-    verbose_name="URL"
-    
+    extra = 1
+    verbose_name = "URL"
+
+
 @admin.register(Logger)
 class LoggerAdmin(admin.ModelAdmin):
     fields = (
@@ -43,7 +46,6 @@ class LoggerAdmin(admin.ModelAdmin):
         'date_created',
         'published',
         'reviewed',
-        'user',
         'date_modified',
         'project',
     )
@@ -63,7 +65,7 @@ class LogFileAdmin(admin.ModelAdmin):
         'file',
         'filetype',
     )
-    list_filter = ('date_created', 'published', 'reviewed')
+    list_filter = ('date_created', 'published', 'reviewed', )
     search_fields = ('slug',)
 
 

@@ -79,5 +79,6 @@ class Project(DesignBaseClass):
 
     description = models.TextField(max_length=512)
 
-    image = models.ImageField(upload_to='project_header', null=True)
-    logo = models.ImageField(upload_to='project_logo', null=True)
+    image = models.ImageField(
+        upload_to='project_header', blank=True, null=True)
+    logo = models.ImageField(upload_to='project_logo', blank=True, null=True)
