@@ -1,0 +1,57 @@
+from django.test import TestCase
+from project.models import Project, Team
+from django.contrib.auth.models import User
+from engbook.settings import BASE_DIR, os
+from django.core.files import File
+import datetime
+
+class TestModels(TestCase):
+
+    def setUp(self):
+        self.testuser1 = User.objects.create_user(
+            'testuser1', password='testpassword', email="testingthemail@example.com")
+        self.testuser2 = User.objects.create_user(
+            'testuser2', password='testpassword')
+
+        self.testteam = Team.objects.create(
+            title='Test Team',
+            description='Testing the team model',
+        )
+        self.testteam.save()
+        self.testteam.members.set([self.testuser1, self.testuser2])
+        self.testteam.save()
+
+        self.testproject = Project.objects.create(
+            title="Test Project",
+            description="testing the project model",
+            team=self.testteam,
+
+        )
+
+    # Team tests
+    def test_team_creation_and_slug(self):        
+        self.assertEquals(self.testteam.slug, 'test-team')
+
+    def test_team_title_and_description(self):
+        self.assertEquals(self.testteam.title, 'Test Team')
+        self.assertEquals(self.testteam.description, 'Testing the team model')
+
+    def test_team_date_creation(self):
+        self.assertEquals(self.testteam.date_created.date(), datetime.date.today())
+       
+    def test_team_user_assignment(self):
+        self.assertEquals(self.testteam.members.all()[0].email, 'testingthemail@example.com')
+        self.assertEquals(self.testteam.members.all()[1].username, 'testuser2')
+
+
+    # Project tests
+    def test_project_creation_and_slug(self):
+        self.assertEquals(self.testproject.slug, 'test-project')
+
+    def test_project_image(self):
+        self.testproject.image.save('test.png', File(
+            open(os.path.join(BASE_DIR, 'project', 'test', 'image.png'), 'rb')))
+
+    def test_project_logo(self):
+        self.testproject.logo.save('test.png', File(
+            open(os.path.join(BASE_DIR, 'project', 'test', 'image.png'), 'rb')))
