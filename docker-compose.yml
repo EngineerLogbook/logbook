@@ -21,4 +21,4 @@ services:
     volumes: 
       - ./engbook/static/:/staticroot
     ports: 
-      - "80:80"
+      - "8090:80"
