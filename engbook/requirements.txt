@@ -2,6 +2,7 @@ aniso8601==7.0.0
 asgiref==3.2.7
 Django==3.0.5
 django-environ==0.4.5
+django-extensions==2.2.9
 django-rest-framework==0.1.0
 djangorestframework==3.11.0
 graphene==2.1.8
@@ -10,6 +11,7 @@ graphql-core==2.3.1
 graphql-relay==2.0.1
 Pillow==7.1.2
 promise==2.3
+pygraphviz==1.5
 pytz==2019.3
 Rx==1.6.1
 singledispatch==3.4.0.3
