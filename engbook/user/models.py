@@ -2,6 +2,7 @@ from django.db import models
 from project.models import DesignBaseClass
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
+from PIL import Image
 import uuid
 # Create your models here.
 
@@ -18,6 +19,7 @@ class Profile(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     user = models.OneToOneField(User, on_delete=models.PROTECT)
     date_created = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(default='default.jpg', upload_to='profile_pics')
     # META DATA
     GENDER = [
         ('Male', 'Male'),
@@ -49,7 +51,7 @@ class Profile(models.Model):
     year_grad = models.PositiveIntegerField(choices=YEAR, null=True)
 
     # Experience
-    techskill = models.ManyToManyField(TechSkill, null=True, blank=True)
+    techskill = models.ManyToManyField(TechSkill, blank=True)
     # Email Verficaton
     token = models.UUIDField(default=uuid.uuid4)
     phone = models.CharField(max_length=10, null=True, blank=True)
@@ -78,6 +80,16 @@ class Profile(models.Model):
             self.save(*args, **kwargs)
         except:
             ValidationError("Internal Server Error")
+
+    def save(self, *args, **kwargs):
+        super().save(*args, **kwargs)
+
+        img = Image.open(self.image.path)
+
+        if img.height > 300 or img.width > 300:
+            output_size = (300, 300)
+            img.thumbnail(output_size)
+            img.save(self.image.path)
 
 
 class Link(models.Model):
