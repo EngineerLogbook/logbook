@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 import uuid
 from project.models import Team, Project, DesignBaseClass
 from django.utils.text import slugify
-
+from django.utils import timezone
 
 # Create your models here.
 
@@ -20,6 +20,11 @@ class Logger(DesignBaseClass):
     def __str__(self):
         return f'{self.user.username} : {self.title}'
 
+    def save(self, *args, **kwargs):
+        # Slugify the name for the URL
+        self.date_modified = timezone.now()
+        super(Logger, self).save(*args, **kwargs)
+
 
 class LogFile(DesignBaseClass):
     FILE_TYPES = [
@@ -31,6 +36,7 @@ class LogFile(DesignBaseClass):
 
     file = models.FileField(upload_to="logfile")
     filetype = models.CharField(max_length=100, choices=FILE_TYPES)
+    log = models.ForeignKey(Logger, on_delete=models.PROTECT, )
 
 
 class LogURL(models.Model):

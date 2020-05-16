@@ -3,20 +3,41 @@ from django.contrib import admin
 
 from .models import Logger, LogFile, LogURL
 
+class LogFileInLine(admin.TabularInline):
+    model = LogFile
+    fields = (
+        'title',
+        'file',
+        'filetype',
 
+    )
+    extra=1
+    verbose_name="Attachment"
+
+class LogURLInline(admin.TabularInline):
+    model = LogURL
+    fields = (
+        'url',
+        'id',
+    )
+    extra=1
+    verbose_name="URL"
+    
 @admin.register(Logger)
 class LoggerAdmin(admin.ModelAdmin):
+    fields = (
+        'title', 'note', 'user', 'project', 'reviewed'
+    )
     list_display = (
-        'id',
         'title',
-        'slug',
+        'project',
+        'user',
         'date_created',
+        'date_modified',
+        'slug',
         'published',
         'reviewed',
-        'note',
-        'user',
-        'date_modified',
-        'project',
+        # 'note',
     )
     list_filter = (
         'date_created',
@@ -27,6 +48,7 @@ class LoggerAdmin(admin.ModelAdmin):
         'project',
     )
     search_fields = ('slug',)
+    inlines = [LogFileInLine, LogURLInline]
 
 
 @admin.register(LogFile)
