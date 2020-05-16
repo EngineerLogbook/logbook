@@ -25,9 +25,9 @@ jobs:
     
     - name: Set up Environment
       run: |
+        cp engbook/.env.example engbook/.env
         export KEY=`uuidgen`
         sed "s/YOUR SECRET_KEY/$KEY/g" engbook/.env -i
-        cp .env.example engbook/.env
         sed "s/DEBUG=/DEBUG=False/g" engbook/.env -i
 
     - name: Install Dependencies
