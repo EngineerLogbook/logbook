@@ -13,7 +13,6 @@ class LogFileInLine(admin.TabularInline):
     )
     extra=1
     verbose_name="Attachment"
-    can_delete=False
 
 class LogURLInline(admin.TabularInline):
     model = LogURL
@@ -23,7 +22,7 @@ class LogURLInline(admin.TabularInline):
     )
     extra=1
     verbose_name="URL"
-    can_delete=False
+    
 @admin.register(Logger)
 class LoggerAdmin(admin.ModelAdmin):
     fields = (
