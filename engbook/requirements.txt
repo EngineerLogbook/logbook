@@ -1,6 +1,5 @@
 aniso8601==7.0.0
 asgiref==3.2.7
-autopep8==1.5.2
 Django==3.0.5
 django-environ==0.4.5
 django-extensions==2.2.9
@@ -14,10 +13,8 @@ mock==4.0.2
 Pillow==7.1.2
 promise==2.3
 pycodestyle==2.6.0
-pygraphviz==1.5
 pytz==2019.3
 Rx==1.6.1
 singledispatch==3.4.0.3
 six==1.14.0
 sqlparse==0.3.1
-uWSGI==2.0.18
