@@ -31,6 +31,7 @@ class LogFile(DesignBaseClass):
 
     file = models.FileField(upload_to="logfile")
     filetype = models.CharField(max_length=100, choices=FILE_TYPES)
+    log = models.ForeignKey(Logger, on_delete=models.PROTECT, )
 
 
 class LogURL(models.Model):

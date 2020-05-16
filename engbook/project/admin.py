@@ -6,19 +6,20 @@ from .models import Team, Project
 
 @admin.register(Team)
 class TeamAdmin(admin.ModelAdmin):
-    exclude = (
-        'slug',
-        'date_created',
-        'published',
+
+    fields = (
+        'title',
+        'description',
+        'members',
+        'token',
         'reviewed',
-        
     )
+
     list_display = (
 
         'title',
         'description',
         'date_created',
-
         'id',
         'slug',
         'published',
@@ -32,18 +33,30 @@ class TeamAdmin(admin.ModelAdmin):
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = (
-        'id',
-        'title',
-        'slug',
-        'date_created',
-        'published',
-        'reviewed',
+    fields = (
         'team',
-        'access_token',
+        'title',
         'description',
         'image',
         'logo',
+        'access_token',
+        'reviewed'
+
+    )
+
+    list_display = (
+        'title',
+        'team',
+        'date_created',
+        'slug',
+
+        'access_token',
+        'id',
+
+        'image',
+        'logo',
+        'published',
+        'reviewed',
     )
     list_filter = ('date_created', 'published', 'reviewed', 'team')
     search_fields = ('slug',)
