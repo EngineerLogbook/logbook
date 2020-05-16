@@ -11,7 +11,7 @@ class DesignBaseClass(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=127)
-    slug = models.SlugField(max_length=255)
+    slug = models.SlugField(max_length=255, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     published = models.BooleanField(default=True)
     reviewed = models.BooleanField(default=False)
@@ -24,7 +24,7 @@ class DesignBaseClass(models.Model):
 
     def save(self, *args, **kwargs):
         # Slugify the name for the URL
-        self.slug = slugify(self.name)
+        self.slug = slugify(self.title)
         super(DesignBaseClass, self).save(*args, **kwargs)
 
     def publishedFlip(self, *args, **kwargs):
