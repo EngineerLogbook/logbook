@@ -32,10 +32,6 @@ class TestModels(TestCase):
     def test_team_creation_and_slug(self):        
         self.assertEquals(self.testteam.slug, 'test-team')
 
-    def test_team_title_and_description(self):
-        self.assertEquals(self.testteam.title, 'Test Team')
-        self.assertEquals(self.testteam.description, 'Testing the team model')
-
     def test_team_date_creation(self):
         self.assertEquals(self.testteam.date_created.date(), datetime.date.today())
        
@@ -48,6 +44,9 @@ class TestModels(TestCase):
     def test_project_creation_and_slug(self):
         self.assertEquals(self.testproject.slug, 'test-project')
 
+    def test_project_date_creation(self):
+        self.assertEquals(self.testproject.date_created.date(), datetime.date.today())
+       
     def test_project_image(self):
         self.testproject.image.save('test.png', File(
             open(os.path.join(BASE_DIR, 'project', 'test', 'image.png'), 'rb')))
@@ -55,3 +54,6 @@ class TestModels(TestCase):
     def test_project_logo(self):
         self.testproject.logo.save('test.png', File(
             open(os.path.join(BASE_DIR, 'project', 'test', 'image.png'), 'rb')))
+
+    def test_project_team_assignment(self):
+        self.assertEquals(self.testproject.team.title, 'Test Team')

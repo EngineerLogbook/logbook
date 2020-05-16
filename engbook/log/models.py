@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-import uuid
+import uuid,datetime
 from project.models import Team, Project, DesignBaseClass
 from django.utils.text import slugify
 
@@ -19,6 +19,11 @@ class Logger(DesignBaseClass):
 
     def __str__(self):
         return f'{self.user.username} : {self.title}'
+
+    def save(self, *args, **kwargs):
+        # Slugify the name for the URL
+        self.date_modified = datetime.datetime.now()
+        super(Logger, self).save(*args, **kwargs)
 
 
 class LogFile(DesignBaseClass):

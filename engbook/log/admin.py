@@ -33,6 +33,7 @@ class LoggerAdmin(admin.ModelAdmin):
         'project',
         'user',
         'date_created',
+        'date_modified',
         'slug',
         'published',
         'reviewed',
