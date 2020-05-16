@@ -159,7 +159,3 @@ yarn-debug.log*
 yarn-error.log*
 
 venv/
-
-project_logo/
-project_header/
-logfile/
