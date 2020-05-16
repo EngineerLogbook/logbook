@@ -69,3 +69,4 @@ class ProfileAdmin(admin.ModelAdmin):
 class LinkAdmin(admin.ModelAdmin):
     list_display = ('url', 'profile')
     list_filter = ('profile',)
+    search_fields = ('name',)
