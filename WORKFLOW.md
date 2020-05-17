@@ -40,14 +40,6 @@ To spin down :
 
 
 
-## Setup and running of project (Frontend)
-- At your root directory run `npm install` to install all the dependencies
-- Start react dev server
-- ```npm run dev```
-
-Runs the app in the development mode.<br />
-Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
-
 
 #### Note
 - If you are adding any new requirements for the project, make sure that you are adding it to ```requirements.txt``` in the engbook folder.
