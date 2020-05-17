@@ -26,6 +26,8 @@ COPY ./requirements.txt /usr/src/app/requirements.txt
 RUN python -m pip install -U --force-reinstall pip
 RUN pip install wheel
 RUN pip install -r requirements.txt
+RUN pip install gunicorn==19.9.0
+RUN pip install psycopg2-binary==2.8.3
 
 
 # copy entrypoint.sh
