@@ -49,7 +49,7 @@ class LogURL(models.Model):
 
 
 class Note(DesignBaseClass):
-    note = models.TextField(max_length=1023)
+    note = models.TextField()
     user = models.ForeignKey(User, on_delete=models.PROTECT)
 
     date_modified = models.DateTimeField(null=True)
