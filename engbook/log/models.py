@@ -5,8 +5,6 @@ from project.models import Team, Project, DesignBaseClass
 from django.utils.text import slugify
 from django.utils import timezone
 
-# Create your models here.
-
 
 class Logger(DesignBaseClass):
 
@@ -16,7 +14,9 @@ class Logger(DesignBaseClass):
 
     date_modified = models.DateTimeField(null=True,)
     project = models.ForeignKey(
-        Project, on_delete=models.PROTECT)
+        Project, on_delete=models.PROTECT, null=True)
+    isNote = models.BooleanField(default=True)
+    private = models.BooleanField(default=True)
 
     def __str__(self):
         return f'{self.user.username} : {self.title}'
