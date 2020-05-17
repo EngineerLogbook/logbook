@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
-
+from log.models import Note
 
 def register(request):
     if request.method == 'POST':
@@ -45,3 +45,24 @@ def profile(request):
 
 def homepage(request):
     return render(request, 'user/homepage.html')
+
+
+@login_required
+def makelog(request):
+    if request.method == "POST":
+        logtext = request.POST.get('logdata', False)
+        newlog = Note.objects.create(
+            title="Test log",
+            note=logtext,
+            user=request.user
+            
+        )
+        newlog.save()
+
+        messages.success(request,'Your log has been created')
+        # return redirect('home')
+    return render(request, 'user/createlog.html')
+
+
+def viewguide(request):
+    return render(request, 'user/guide.html')

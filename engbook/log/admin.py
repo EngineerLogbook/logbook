@@ -1,7 +1,30 @@
 # -*- coding: utf-8 -*-
 from django.contrib import admin
 
-from .models import Logger, LogFile, LogURL
+from .models import Logger, LogFile, LogURL, Note
+
+@admin.register(Note)
+class NoteAdmin(admin.ModelAdmin):
+    fields = (
+        'title', 'note', 'user', 'reviewed'
+    )
+    list_display = (
+        'title',
+        'user',
+        'date_created',
+        'date_modified',
+        'slug',
+        'published',
+        'reviewed',
+        # 'note',
+    )
+    list_filter = (
+        'date_created',
+        'published',
+        'reviewed',
+        'date_modified',
+    )
+    search_fields = ('slug','title')
 
 
 class LogFileInLine(admin.TabularInline):

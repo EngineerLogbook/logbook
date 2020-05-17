@@ -60,4 +60,4 @@ class Note(DesignBaseClass):
     def save(self, *args, **kwargs):
         # Slugify the name for the URL
         self.date_modified = timezone.now()
-        super(Logger, self).save(*args, **kwargs)
+        super(Note, self).save(*args, **kwargs)

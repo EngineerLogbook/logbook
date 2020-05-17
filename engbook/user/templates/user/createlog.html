@@ -1,0 +1,9 @@
+{% extends 'user/base.html' %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    <textarea id="logcontent" name="logdata"># Today's log</textarea>
+    <input type="submit" value="submit">
+</form>
+{% endblock content %}
