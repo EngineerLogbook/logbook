@@ -26,7 +26,8 @@ SECRET_KEY = os.environ.get("SECRET_KEY", default='secret_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get("DEBUG", default=1))
 
-ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", default='127.0.0.1 localhost 0.0.0.0 *').split(" ")
+ALLOWED_HOSTS = os.environ.get(
+    "DJANGO_ALLOWED_HOSTS", default='127.0.0.1 localhost 0.0.0.0 *').split(" ")
 
 
 # Application definition
@@ -139,4 +140,3 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
-

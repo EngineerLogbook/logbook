@@ -1,4 +1,5 @@
 # Engineering LogBook Project 🔖
+![Django CI](https://github.com/EngineerLogbook/logbook/workflows/Django%20CI/badge.svg)
 
 The Plan is to build an Application for People to log there projects and manage it 
 
