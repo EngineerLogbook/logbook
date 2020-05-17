@@ -11,9 +11,10 @@ from django.utils import timezone
 class Logger(DesignBaseClass):
 
     note = models.TextField(max_length=1023)
-    user = models.ForeignKey(User, on_delete=models.PROTECT)
+    user = models.ForeignKey(
+        User, on_delete=models.PROTECT, null=True, blank=True)
 
-    date_modified = models.DateTimeField(null=True)
+    date_modified = models.DateTimeField(null=True,)
     project = models.ForeignKey(
         Project, on_delete=models.PROTECT)
 
@@ -45,3 +46,18 @@ class LogURL(models.Model):
 
     def __str__(self):
         return f'{self.url}'
+
+
+class Note(DesignBaseClass):
+    note = models.TextField(max_length=1023)
+    user = models.ForeignKey(User, on_delete=models.PROTECT)
+
+    date_modified = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return f'{self.user.username} : {self.title}'
+
+    def save(self, *args, **kwargs):
+        # Slugify the name for the URL
+        self.date_modified = timezone.now()
+        super(Logger, self).save(*args, **kwargs)

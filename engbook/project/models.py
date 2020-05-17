@@ -11,7 +11,7 @@ class DesignBaseClass(models.Model):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=127)
-    slug = models.SlugField(max_length=255, null=True)
+    slug = models.SlugField(max_length=127, null=True)
     date_created = models.DateTimeField(auto_now_add=True)
     published = models.BooleanField(default=True)
     reviewed = models.BooleanField(default=False)
