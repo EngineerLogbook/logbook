@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'project',
     'django_extensions',
     'crispy_forms',
-    'user'
+    'user.apps.UserConfig'
 ]
 
 GRAPH_MODELS = {
