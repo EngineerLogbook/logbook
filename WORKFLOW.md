@@ -4,7 +4,7 @@
 ```python -m venv env``` 
 - Then activate the environment using <br>
     On Windows
-```source env/Scripts/activate```
+```source env\Scripts\activate```
     On MacOS/Linux
 ```source env/bin/actiavte```
 - At the root of your project directory <br>
@@ -39,14 +39,6 @@ To spin down :
 ```sudo docker-compose down --remove-orphans```
 
 
-
-## Setup and running of project (Frontend)
-- At your root directory run `npm install` to install all the dependencies
-- Start react dev server
-- ```npm run dev```
-
-Runs the app in the development mode.<br />
-Open [http://localhost:8000](http://localhost:8000) to view it in the browser.
 
 
 #### Note
