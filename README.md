@@ -65,16 +65,31 @@ These instructions in [WORKFLOW](WORKFLOW.md) will get you a copy of the project
 
 We use [SemVer](http://semver.org/) for versioning. 
 
-## Authors ✍🏻
-
+## Project Development Team :computer:
+  * **Project Leader :** [Shankho Boron Ghosh](https://github.com/growupboron)
+  * **Lead Software Developer :** [Shresth Arora](https://github.com/AroraShreshth)
+  * **Team Whip & Backend Developer :** [Vividh Marya](https://github.com/MagnumDingusEdu)
+  * **Software Developers :**
+    * [Akshit Gupta](https://github.com/akshit-mee)
+    * [Divyam Dutta](https://github.com/AnirudhAiri7)
+    * [Nipun Garg](https://github.com/NipunGarg1)
+    * [Anirudh Airi](https://github.com/AnirudhAiri7)
+    * [Tushen Makol](https://github.com/tushenmakol)
+    * [Prachi Aeron](https://github.com/https://github.com/Prachi-Aeron)
+    * [Ankur Monga](https://github.com/ankurmonga7)
+    * [Tushar Choudhary](https://github.com/taz2419)
+    * [Kartik Sharma](https://github.com/Kartik8093)
+    * [Anchit Bajaj](https://github.com/IceWreck)
+    * [Gunwant Jain](https://github.com/WantGuns)
+  
  <!-- NEED to be updated by author's themselves -->
 
 ## License 📜
 
 This project is licensed under the GNU-GENERAL-PUBLIC-LICENSE - see the [LICENSE.md](LICENSE.md) file for details
 
-## Acknowledgments 💯
-
+## Faculty Advisors 💯
+We are thankful for the guidance of :
 * [Dr Sanjeev Bedi](https://uwaterloo.ca/engineering-ideas-clinic/people-profiles/sanjeev-bedi-peng) - Professor, University of Waterloo 
 * [Dr Ajay Batish](http://www.thapar.edu/faculties/view/Dr.-Ajay-Batish/MTQy/Nw==) - Professor, Thapar Institute of Engineering & Technology
 * [Mr A S Jawanda](http://thapar.edu/faculties/view/A.-S.-Jawanda/MTU4/MTY=) - Associate Professor, Thapar Institute of Engineering & Technology
