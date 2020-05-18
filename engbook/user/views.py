@@ -3,6 +3,20 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
+posts = [
+    {
+        'author': 'User1',
+        'title': 'Log-1',
+        'content': 'First post content',
+        'date_posted': 'May 18,2020'
+    },
+    {
+        'author': 'User2',
+        'title': 'Log-2',
+        'content': 'Second post content',
+        'date_posted': 'May 19,2020'
+    }
+]
 
 def register(request):
     if request.method == 'POST':
@@ -44,4 +58,8 @@ def profile(request):
 
 
 def homepage(request):
-    return render(request, 'user/homepage.html')
+    context = {
+        'posts': posts
+    }
+    return render(request, 'user/homepage.html', context)
+

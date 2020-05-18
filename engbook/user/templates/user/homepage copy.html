@@ -1,4 +1,3 @@
-{% extends "user/base.html" %}
 <!DOCTYPE html>
 <!-- saved from url=(0057)https://getbootstrap.com/docs/4.0/examples/sticky-footer/ -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -19,11 +18,6 @@
   </head>
 
   <body>
-      {% for post in posts %}
-          <h1>{{ post.title }}</h1>
-          <p>By {{ post.author }} on {{ post.date_posted }}</p>
-          <p>{{ post.content }}</p>
-      {% endfor %}
 
     <!-- Begin page content -->
     <main role="main" class="container">
