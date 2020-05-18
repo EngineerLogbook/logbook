@@ -4,7 +4,7 @@
 ```python -m venv env``` 
 - Then activate the environment using <br>
     On Windows
-```source env/Scripts/activate```
+```source env\Scripts\activate```
     On MacOS/Linux
 ```source env/bin/actiavte```
 - At the root of your project directory <br>
