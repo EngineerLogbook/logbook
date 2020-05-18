@@ -28,4 +28,4 @@ class ProfileUpdateForm(forms.ModelForm):
 class BioUpdateForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ['bio']
+        fields = ['bio', 'degree', 'gender', 'field_study', 'phone']
