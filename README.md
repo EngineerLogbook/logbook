@@ -9,12 +9,12 @@ The logbook serves as a repository for all relevant information, meeting summari
 The project is to bring significant value to the people who use it and manage capstone projects in our campus.
 The plan is to be something similar to branching and versioning to other engineering projects 
 Currently this project make it simple for you to create logs and add maintain engineering projects and make Teams 
-### Goals
+### Goals :bulb:
 * Personal Logbook cum task organizer.
 * Scalable, secure and collaborative interface for engineers and scientists.
 * Analogous to ```Github``` but also supports non-circuit branches.
 * Project interface to adequately monitor and evaluate group tasks.
-### Proposed Functionalities
+### Proposed Functionalities :chart_with_upwards_trend:
 1. Timelined Daily
    * Logs on the basis of Dates
    * Tamperproof logs (Data can be edited within the day with edit logs maintained)
@@ -54,18 +54,18 @@ Currently this project make it simple for you to create logs and add maintain en
 These instructions in [WORKFLOW](WORKFLOW.md) will get you a copy of the project up and running on your local machine for development and testing purposes. 
 
 ## Built With ⚒
-### Backend 📡
-* [Django 3.0](https://www.djangoproject.com) - The web framework used in the project.
-* [Django Rest Framework](https://www.django-rest-framework.org) - Does the magic of making REST API endpoints 
-### Web Application 🖥
-* [Bootstrap](https://getboostrap.com) - The Twitter UI Framework
+* ### Backend 📡
+  * [Django 3.0](https://www.djangoproject.com) - The web framework used in the project.
+  * [Django Rest Framework](https://www.django-rest-framework.org) - Does the magic of making REST API endpoints 
+* ### Web Application 🖥
+  * [Bootstrap](https://getboostrap.com) - The Twitter UI Framework
 
 
 ## Versioning 🗓
 
 We use [SemVer](http://semver.org/) for versioning. 
 
-## Project Development Team :computer:
+## Project Development Team :eyeglasses:
   * **Project Leader :** [Shankho Boron Ghosh](https://github.com/growupboron)
   * **Lead Software Developer :** [Shresth Arora](https://github.com/AroraShreshth)
   * **Team Whip & Backend Developer :** [Vividh Marya](https://github.com/MagnumDingusEdu)
