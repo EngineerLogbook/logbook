@@ -1,13 +1,48 @@
 # Engineering LogBook Project 🔖
 ![Django CI](https://github.com/EngineerLogbook/logbook/workflows/Django%20CI/badge.svg)
 
-The Plan is to build an Application for People to log there projects and manage it 
+The logbook serves as a repository for all relevant information, meeting summaries, responsibilities, tasks, due dates etc. The design logbook is like a trusted assistant, who helps by recording all that is important and helps prioritize what needs to be done next. The proposed project is to develop a habit of keeping a design logbook. The need is to build a digital logbook app which all students can use during the capstone project to learn what content should be written in a logbook and to develop a habit of keeping an up-to-date logbook.
+
 
 ## About  💫
 
 The project is to bring significant value to the people who use it and manage capstone projects in our campus.
 The plan is to be something similar to branching and versioning to other engineering projects 
 Currently this project make it simple for you to create logs and add maintain engineering projects and make Teams 
+### Goals
+* Personal Logbook cum task organizer.
+* Scalable, secure and collaborative interface for engineers and scientists.
+* Analogous to ```Github``` but also supports non-circuit branches.
+* Project interface to adequately monitor and evaluate group tasks.
+### Proposed Functionalities
+1. Timelined Daily
+   * Logs on the basis of Dates
+   * Tamperproof logs (Data can be edited within the day with edit logs maintained)
+   * Public and Private logs depending on the sensitivity of contents as required
+2. Embed and log basic types of data including but not limited to :
+   * PDF / Word / Excel / PPTs / LaTeX / Symbolic Math
+   * Video / Image / YouTube / Location / Contacts / Audio
+3. Scalable and Flexible Web GUI interface which can be expanded to multiple platform based clients.
+4. Collaborative Project environment
+   * Supports Kanban / Gantt Chart for the structured approach of tasks.
+   * Project linked through tags mentioned in the logs, these tags can further support sub-tags for corresponding departments within the project.
+   * Privacy to the logs can be shared in Private (Personal to the user), Semi - Private (Shared between the members of the corresponding project), Public.
+5. Logs are encrypted to increase further security.
+6. Other basic Miscellaneous features like
+   * Bookmarking based on the priority of logs or tasks.
+   * Internal Links (Ports to particular Internal entries).
+   * Comments and Reviews on public entries.
+   * Support for evaluation on the basis of quality documentation of logs
+7. Secondary / Nice to have features.
+   * Local Desktop and Multiplatform Mobile Client.
+   * Syncable Offline Support.
+   * Reminder for particular log tasks (In application notification or calendar syncable).
+   * Preview popular Computer-Aided Design (CAD) formats.
+   * Annotating Photos and using OCR to extract and embed data.
+   * Chat / Video - Conferencing Support.
+   * IoT based Tool and equipment tracking.
+   * Auto Generation of Bill of Materials and Inventory lists.
+   * Link & Embed files from popular cloud services like (gDrive, Dropbox, OneDrive).
 
 ## Contribution 🎛
 
