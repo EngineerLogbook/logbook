@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
+from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm, BioUpdateForm
 
 
 def register(request):
@@ -25,6 +25,7 @@ def profile(request):
         p_form = ProfileUpdateForm(request.POST,
                                    request.FILES,
                                    instance=request.user.profile)
+        
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
@@ -49,19 +50,22 @@ def profile_edit(request):
         p_form = ProfileUpdateForm(request.POST,
                                    request.FILES,
                                    instance=request.user.profile)
-        if u_form.is_valid() and p_form.is_valid():
+        b_form = BioUpdateForm(request.POST, request.FILES, instace=request.user.profile)
+        if u_form.is_valid() and p_form.is_valid() and b_form.is_vaild():
             u_form.save()
             p_form.save()
+            b_form.save()
             messages.success(request, f'Your account has been updated!')
-            return redirect('profile')
+            return redirect('./profile')
 
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
-
+        b_form = BioUpdateForm(instance=request.user.profile)
     context = {
         'u_form': u_form,
-        'p_form': p_form
+        'p_form': p_form,
+        'b_form':b_form
     }
 
     return render(request, 'user/profile-edit.html', context)
