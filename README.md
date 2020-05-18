@@ -75,7 +75,7 @@ We use [SemVer](http://semver.org/) for versioning.
     * [Nipun Garg](https://github.com/NipunGarg1)
     * [Anirudh Airi](https://github.com/AnirudhAiri7)
     * [Tushen Makol](https://github.com/tushenmakol)
-    * [Prachi Aeron](https://github.com/https://github.com/Prachi-Aeron)
+    * [Prachi Aeron](https://github.com/Prachi-Aeron)
     * [Ankur Monga](https://github.com/ankurmonga7)
     * [Tushar Choudhary](https://github.com/taz2419)
     * [Kartik Sharma](https://github.com/Kartik8093)
