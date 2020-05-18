@@ -19,10 +19,16 @@
               <h6>{{request.user.profile.degree}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
               {{request.user.profile.year_grad}}</h6>
+
+              {{ u_form|crispy }}              
+              {{ p_form|crispy }}
+            
           </fieldset>
-             <a href="./profile-edit">
-              <button class="btn btn-outline-info">Edit</button>
-            <a>
+          <div class="form-group">
+          <form method="get" action="/page2">
+            <button class="btn btn-outline-info" type="submit">Edit</button>
+          </form>    
+          </div>
       </form>
     </div>
 {% endblock content %}
