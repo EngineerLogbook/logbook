@@ -3,6 +3,52 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import *
 
+projects = [
+    {
+        "name": "Project 1",
+        "description": "Project description",
+        "logs": [
+             {
+               'author': 'User1',
+               'title': 'Log-1',
+               'content': 'First log content',
+               'date_posted': 'May 18,2020'
+             },
+             {
+               'author': 'User2',
+               'title': 'Log-2',
+               'content': 'Second log content',
+               'date_posted': 'May 19,2020'
+             }
+
+        ]
+
+        },
+        {
+        "name": "Project 2",
+        "description": "Project description",
+        "logs": [
+             {
+               'author': 'User1',
+               'title': 'Log-1',
+               'content': 'First log content',
+               'date_posted': 'May 18,2020'
+             },
+             {
+               'author': 'User2',
+               'title': 'Log-2',
+               'content': 'Second log content',
+               'date_posted': 'May 19,2020'
+             }
+
+        ]
+
+        }
+]
+
+  
+
+
 
 def register(request):
     if request.method == 'POST':
@@ -51,7 +97,12 @@ def profile_edit(request):
 
 
 def homepage(request):
-    return render(request, 'user/homepage.html')
+    context = {
+        'projects': projects
+    }
+
+    return render(request, 'user/homepage.html', context)
+
 
 def newlog(request):
     return render(request, 'user/newlog.html')
