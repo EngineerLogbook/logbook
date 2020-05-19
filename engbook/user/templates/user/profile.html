@@ -12,13 +12,16 @@
       <form method="POST" enctype="multipart/form-data">
           {% csrf_token %}
           <fieldset class="form-group">
-              <legend class="border-bottom mb-4">Profile Info</legend>
-              {{ u_form|crispy }}
-              {{ p_form|crispy }}
+              <legend class="border-bottom mb-4">About Me</legend>
+              <h6>{{request.user.profile.bio}}</h6>
+              <br>
+              <legend class="border-bottom mb-4">Education</legend>
+              <h6>{{request.user.profile.degree}} &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              {{request.user.profile.year_grad}}</h6>
           </fieldset>
-          <div class="form-group">
-              <button class="btn btn-outline-info" type="submit">Update</button>
-          </div>
+              <a href="../profile-edit"> edit </a>
+              <a class="btn btn-outline-info" href="../profile-edit">Edit</a>
       </form>
     </div>
 {% endblock content %}
