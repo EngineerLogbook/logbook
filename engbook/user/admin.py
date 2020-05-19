@@ -39,18 +39,19 @@ class TechSkillAdmin(admin.ModelAdmin):
 @admin.register(Profile)
 class ProfileAdmin(admin.ModelAdmin):
     list_display = (
+        # 'user',
+        # 'date_created',
+        # 'gender',
+        # 'bio',
+        # 'degree',
+        # 'is_prof',
+        # 'year_grad',
+        # 'token',
+        # 'phone',
+        # 'published',
+        # 'reviewed',
         'user',
         'date_created',
-        'gender',
-        'bio',
-        'degree',
-        'is_prof',
-        'field_study',
-        'year_grad',
-        'token',
-        'phone',
-        'published',
-        'reviewed',
     )
     list_filter = (
         'date_created',

@@ -40,6 +40,7 @@ class LoggerAdmin(admin.ModelAdmin):
         'slug',
         'published',
         'reviewed',
+        'id',
         # 'note',
     )
     list_filter = (

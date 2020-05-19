@@ -39,7 +39,7 @@ class Profile(models.Model):
     ]
     degree = models.CharField(max_length=20, choices=DEGREES, null=True)
     is_prof = models.BooleanField(default=False)
-    field_study = models.ForeignKey(FieldStudy, on_delete=models.PROTECT)
+    field_study = models.ForeignKey(FieldStudy, on_delete=models.PROTECT, null=True, blank=True)
     YEAR = [
         (2020, 2020),
         (2021, 2021),

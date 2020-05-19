@@ -1,0 +1,33 @@
+{% extends 'user/base.html' %} {% block content %}
+
+
+
+<div class="container">
+  <h1 class="page.header">Edit Log</h1>
+
+  <hr>
+  <form method="POST">
+      {% csrf_token %}
+
+        <div class="form-group">
+        <input value="{{ logger.title }}" type="textarea" class="form-control" id="logtitle" name="logtitle" placeholder="Title">
+
+    </div>
+  <div class="form-group">
+
+    <textarea id="logcontent" name="logdata">{{ logger.note }}</textarea>
+  </div>
+
+  <hr>
+
+
+  <button type="submit" class="btn btn-primary">Save</button>
+
+  <hr>
+
+
+
+
+  </form>
+</div>
+{% endblock content %}
