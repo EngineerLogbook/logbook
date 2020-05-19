@@ -83,7 +83,7 @@ class Project(DesignBaseClass):
         ('testing', 'testing'),
         ('completed', 'completed')
     ]
-    status = models.CharField(max_length=11, choices=STATUS)
+    status = models.CharField(max_length=11, choices=STATUS, null=True)
     description = models.TextField(max_length=512)
 
     image = models.ImageField(
