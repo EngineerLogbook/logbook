@@ -77,6 +77,13 @@ class Project(DesignBaseClass):
     access_token = models.UUIDField(
         default=uuid.uuid4)
 
+    STATUS = [
+        ('ideation', 'ideation'),
+        ('development', 'development'),
+        ('testing', 'testing'),
+        ('completed', 'completed')
+    ]
+    status = models.CharField(max_length=11, choices=STATUS)
     description = models.TextField(max_length=512)
 
     image = models.ImageField(

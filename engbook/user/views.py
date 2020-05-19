@@ -4,6 +4,11 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from log.models import Note
 
+
+def viewguide(request):
+    return render(request, 'user/guide.html')
+
+
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
@@ -55,14 +60,10 @@ def makelog(request):
             title="Test log",
             note=logtext,
             user=request.user
-            
+
         )
         newlog.save()
 
-        messages.success(request,'Your log has been created')
+        messages.success(request, 'Your log has been created')
         # return redirect('home')
     return render(request, 'user/createlog.html')
-
-
-def viewguide(request):
-    return render(request, 'user/guide.html')
