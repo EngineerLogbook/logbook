@@ -3,20 +3,52 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 
-posts = [
+projects = [
     {
-        'author': 'User1',
-        'title': 'Log-1',
-        'content': 'First post content',
-        'date_posted': 'May 18,2020'
-    },
-    {
-        'author': 'User2',
-        'title': 'Log-2',
-        'content': 'Second post content',
-        'date_posted': 'May 19,2020'
-    }
+        "name": "Project 1",
+        "description": "Project description",
+        "logs": [
+             {
+               'author': 'User1',
+               'title': 'Log-1',
+               'content': 'First log content',
+               'date_posted': 'May 18,2020'
+             },
+             {
+               'author': 'User2',
+               'title': 'Log-2',
+               'content': 'Second log content',
+               'date_posted': 'May 19,2020'
+             }
+
+        ]
+
+        },
+        {
+        "name": "Project 2",
+        "description": "Project description",
+        "logs": [
+             {
+               'author': 'User1',
+               'title': 'Log-1',
+               'content': 'First log content',
+               'date_posted': 'May 18,2020'
+             },
+             {
+               'author': 'User2',
+               'title': 'Log-2',
+               'content': 'Second log content',
+               'date_posted': 'May 19,2020'
+             }
+
+        ]
+
+        }
 ]
+
+  
+
+
 
 def register(request):
     if request.method == 'POST':
@@ -59,7 +91,8 @@ def profile(request):
 
 def homepage(request):
     context = {
-        'posts': posts
+        'projects': projects
     }
+
     return render(request, 'user/homepage.html', context)
 
