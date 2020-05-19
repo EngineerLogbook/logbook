@@ -39,7 +39,8 @@ class Profile(models.Model):
     ]
     degree = models.CharField(max_length=20, choices=DEGREES, null=True)
     is_prof = models.BooleanField(default=False)
-    field_study = models.ForeignKey(FieldStudy, on_delete=models.PROTECT, null=True)
+    field_study = models.ForeignKey(
+        FieldStudy, on_delete=models.PROTECT, null=True)
     YEAR = [
         (2020, 2020),
         (2021, 2021),
@@ -80,6 +81,14 @@ class Profile(models.Model):
             self.save(*args, **kwargs)
         except:
             ValidationError("Internal Server Error")
+
+    def checkPhone(self, *args, **kwargs):
+        # To be added to save method
+        try:
+            num = int(self.phone)
+            print("String1 contains only digits")
+        except:
+            raise ValidationError('Not all Digits')
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
