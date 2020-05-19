@@ -45,3 +45,6 @@ def profile(request):
 
 def homepage(request):
     return render(request, 'user/homepage.html')
+
+def newlog(request):
+    return render(request, 'user/newlog.html')
