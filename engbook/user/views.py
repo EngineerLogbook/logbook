@@ -2,49 +2,9 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import *
+from log.models import Logger
 
-projects = [
-    {
-        "name": "Project 1",
-        "description": "Project description",
-        "logs": [
-             {
-               'author': 'User1',
-               'title': 'Log-1',
-               'content': 'First log content',
-               'date_posted': 'May 18,2020'
-             },
-             {
-               'author': 'User2',
-               'title': 'Log-2',
-               'content': 'Second log content',
-               'date_posted': 'May 19,2020'
-             }
 
-        ]
-
-        },
-        {
-        "name": "Project 2",
-        "description": "Project description",
-        "logs": [
-             {
-               'author': 'User1',
-               'title': 'Log-1',
-               'content': 'First log content',
-               'date_posted': 'May 18,2020'
-             },
-             {
-               'author': 'User2',
-               'title': 'Log-2',
-               'content': 'Second log content',
-               'date_posted': 'May 19,2020'
-             }
-
-        ]
-
-        }
-]
 
   
 
@@ -98,7 +58,7 @@ def profile_edit(request):
 
 def homepage(request):
     context = {
-        'projects': projects
+        'loggers': Logger.objects.filter(user=request.user)
     }
 
     return render(request, 'user/homepage.html', context)
@@ -107,10 +67,56 @@ def homepage(request):
 def landingpage(request):
     return render(request, 'user/landingpage.html')
 
-def newlog(request):
-    context = {
-        "logger": {
-            "content":""""""
+def viewlog(request, uuid):
+    try:
+        selectedlog = Logger.objects.filter(slug=uuid)[0]
+        context = {
+            "logger": selectedlog
         }
-    }
+    except:
+        context = {
+            "error":"404 - The selected log was not found"
+        }
     return render(request, 'user/viewlog.html', context)
+
+
+def editlog(request, uuid):
+    if request.method == "POST":
+        logtext = request.POST.get('logdata', False)
+        logtitle = request.POST.get('logtitle', False)
+        thelog = Logger.objects.filter(slug=uuid)[0]
+        thelog.note=logtext
+        thelog.title=logtitle
+        thelog.save()
+
+
+        messages.success(request, 'Your log has been saved')    
+        return redirect('user-home')
+    try:
+        selectedlog = Logger.objects.filter(slug=uuid)[0]
+        context = {
+            "logger": selectedlog
+        }
+    except:
+        context = {
+            "error":"404 - The selected log was not found"
+        }
+    return render(request, 'user/editlog.html', context)
+
+def newlog(request):
+    if request.method == "POST":
+        logtext = request.POST.get('logdata', False)
+        logtitle = request.POST.get('logtitle', False)
+        newlog = Logger.objects.create(
+            note=logtext,
+            user=request.user,
+            title=logtitle,
+
+
+        )
+        newlog.save()
+
+        messages.success(request, 'Your log has been created')
+        return redirect('user-home')
+        # return redirect('home')
+    return render(request, 'user/newlog.html')

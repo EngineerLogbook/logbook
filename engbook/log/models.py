@@ -15,7 +15,7 @@ class Logger(DesignBaseClass):
 
     date_modified = models.DateTimeField(null=True)
     project = models.ForeignKey(
-        Project, on_delete=models.PROTECT)
+        Project, on_delete=models.PROTECT, null=True, blank=True)
 
     def __str__(self):
         return f'{self.user.username} : {self.title}'

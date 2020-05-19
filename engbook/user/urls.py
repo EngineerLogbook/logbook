@@ -6,7 +6,9 @@ urlpatterns = [
     path('home/', user_views.homepage, name='user-home'),
     path('register/', user_views.register, name='register'),
     path('profile/', user_views.profile, name='profile'),
-    path('newlog/',user_views.newlog, name='newlog'),
+    path('viewlog/<str:uuid>',user_views.viewlog, name='viewlog'),
+    path('editlog/<str:uuid>',user_views.editlog, name='editlog'),
+    path('newlog/', user_views.newlog, name='new-log'),
     path('profile-edit/', user_views.profile_edit, name='profile-edit'),
 ]
 
