@@ -11,7 +11,7 @@
     <div class="card mb-4 box-shadow">
         <div class="card-header">
             <div class="d-flex align-items-center">
-                <h3 class="mr-auto">The Title</h3>
+                <h2 class="mr-auto bold">The Title</h2>
                 <div class="btn-group" role="group">
                     <button class="btn btn-primary">Edit</button>
                     <button class="btn btn-primary" style="margin-left: 1em">Delete</button>
@@ -19,11 +19,13 @@
             </div>
         </div>
         <div class="card-body">
-            <div id="content"></div>
+            <div id="content">{{ logger.note }}</div>
         </div>
+        <div class="card-footer text-muted">Vividh Mariya - 2 days ago</div>
     </div>
+    
+    
 </div>
-
 
 
 
@@ -31,6 +33,6 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
     document.getElementById('content').innerHTML =
-        marked('# Marked in the browser\n\nRendered by **marked**.');
+        marked(document.getElementById('content').innerHTML);
 </script>
 {% endblock content %}

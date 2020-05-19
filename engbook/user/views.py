@@ -108,4 +108,9 @@ def landingpage(request):
     return render(request, 'user/landingpage.html')
 
 def newlog(request):
-    return render(request, 'user/viewlog.html')
+    context = {
+        "logger": {
+            "content":""""""
+        }
+    }
+    return render(request, 'user/viewlog.html', context)
