@@ -12,12 +12,15 @@
        {% for log in loggers %}
 
          <article class="media content-section">
-  <div class="media-body">
+        <div class="media-body">
     <div class="article-metadata">
       <a class="mr-2" href="#">{{ log.user.username }}</a>
       <small class="text-muted">{{ log.date_created }}</small>
     </div>
-    <h3><a class="article-title" href="{% url 'viewlog' log.slug %}">{{ log.title }}</a></h3>
+    <h3><a class="article-title" href="
+    {% url 'viewlog' log.slug %}
+    
+    ">{{ log.title }}</a></h3>
   </div>
 </article>
          

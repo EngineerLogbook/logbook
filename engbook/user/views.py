@@ -5,11 +5,6 @@ from .forms import *
 from log.models import Logger
 
 
-
-  
-
-
-
 def register(request):
     if request.method == 'POST':
         form = UserRegisterForm(request.POST)
@@ -28,6 +23,7 @@ def register(request):
 def profile(request):
     return render(request, 'user/profile.html')
 
+
 @login_required
 def profile_edit(request):
     if request.method == 'POST':
@@ -39,7 +35,7 @@ def profile_edit(request):
         if u_form.is_valid() and p_form.is_valid():
             u_form.save()
             p_form.save()
-##            b_form.save()
+# b_form.save()
             messages.success(request, f'Your account has been updated!')
             return redirect('profile-edit')
 
@@ -50,7 +46,7 @@ def profile_edit(request):
     context = {
         'u_form': u_form,
         'p_form': p_form,
-##        'b_form':b_form
+        # 'b_form':b_form
     }
 
     return render(request, 'user/profile-edit.html', context)
@@ -67,6 +63,7 @@ def homepage(request):
 def landingpage(request):
     return render(request, 'user/landingpage.html')
 
+
 def viewlog(request, uuid):
     try:
         selectedlog = Logger.objects.filter(slug=uuid)[0]
@@ -75,7 +72,7 @@ def viewlog(request, uuid):
         }
     except:
         context = {
-            "error":"404 - The selected log was not found"
+            "error": "404 - The selected log was not found"
         }
     return render(request, 'user/viewlog.html', context)
 
@@ -85,12 +82,10 @@ def editlog(request, uuid):
         logtext = request.POST.get('logdata', False)
         logtitle = request.POST.get('logtitle', False)
         thelog = Logger.objects.filter(slug=uuid)[0]
-        thelog.note=logtext
-        thelog.title=logtitle
+        thelog.note = logtext
+        thelog.title = logtitle
         thelog.save()
-
-
-        messages.success(request, 'Your log has been saved')    
+        messages.success(request, 'Your log has been saved')
         return redirect('user-home')
     try:
         selectedlog = Logger.objects.filter(slug=uuid)[0]
@@ -99,9 +94,10 @@ def editlog(request, uuid):
         }
     except:
         context = {
-            "error":"404 - The selected log was not found"
+            "error": "404 - The selected log was not found"
         }
     return render(request, 'user/editlog.html', context)
+
 
 def newlog(request):
     if request.method == "POST":
@@ -111,7 +107,6 @@ def newlog(request):
             note=logtext,
             user=request.user,
             title=logtitle,
-
 
         )
         newlog.save()
