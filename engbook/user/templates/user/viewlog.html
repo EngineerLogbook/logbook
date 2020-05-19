@@ -1,0 +1,36 @@
+{% extends 'user/base.html' %}
+
+{% block content %}
+{% comment %} <h2 class="article-title">Log Title</h2> {% endcomment %}
+
+
+
+
+
+<div class="card-deck mb-3 text-left">
+    <div class="card mb-4 box-shadow">
+        <div class="card-header">
+            <div class="d-flex align-items-center">
+                <h3 class="mr-auto">The Title</h3>
+                <div class="btn-group" role="group">
+                    <button class="btn btn-primary">Edit</button>
+                    <button class="btn btn-primary" style="margin-left: 1em">Delete</button>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+            <div id="content"></div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script>
+    document.getElementById('content').innerHTML =
+        marked('# Marked in the browser\n\nRendered by **marked**.');
+</script>
+{% endblock content %}

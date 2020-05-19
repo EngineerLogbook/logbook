@@ -46,7 +46,7 @@ INSTALLED_APPS = [
     'project',
     'django_extensions',
     'crispy_forms',
-    'user'
+    'user.apps.UserConfig'
 ]
 
 GRAPH_MODELS = {
@@ -140,3 +140,8 @@ STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL='user-home'

@@ -58,7 +58,7 @@ def register(request):
             username = form.cleaned_data.get('username')
             messages.success(
                 request, f'Your account has been created! You are now able to log in')
-            return redirect('user/profile-edit')
+            return redirect('profile-edit')
     else:
         form = UserRegisterForm()
     return render(request, 'user/register.html', {'form': form})
@@ -104,5 +104,8 @@ def homepage(request):
     return render(request, 'user/homepage.html', context)
 
 
+def landingpage(request):
+    return render(request, 'user/landingpage.html')
+
 def newlog(request):
-    return render(request, 'user/newlog.html')
+    return render(request, 'user/viewlog.html')
