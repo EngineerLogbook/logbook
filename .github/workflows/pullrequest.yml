@@ -1,10 +1,9 @@
-name: Django CI
+name: Pull Request CI
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
     branches: [ master ]
+  
 
 jobs:
   build:
@@ -29,7 +28,6 @@ jobs:
         export KEY=`uuidgen`
         sed "s/YOUR SECRET_KEY/$KEY/g" engbook/.env -i
         sed "s/DEBUG=/DEBUG=False/g" engbook/.env -i
-
     - name: Install Dependencies
       run: |
         python -m pip install wheel
