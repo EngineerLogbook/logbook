@@ -12,6 +12,9 @@ then
     echo "PostgreSQL started"
 fi
 
+# Clean the database and remove all tables
+python manage.py flush --noinput
+
 
 # Generate new database tables
 python manage.py migrate
