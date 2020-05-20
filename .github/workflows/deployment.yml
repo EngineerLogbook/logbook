@@ -43,6 +43,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Push to Docker Container
-      run: |
-        curl https://webhook.site/013234df-274b-4de1-88e2-b00f9b3dcccd
+      - name: Deploy to server
+      - shell: bash
+        env:
+          SERVER_URL: ${{ secrets.serverurl }}
+        run: |
+          curl "$SERVER_URL"
+
+
