@@ -39,7 +39,6 @@ jobs:
         cd engbook
         python manage.py test
   release:
-    if: ${{ github.ref == 'master' }}
     needs: build
     runs-on: ubuntu-latest
     
