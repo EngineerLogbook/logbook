@@ -44,7 +44,6 @@ jobs:
     
     steps:
       - name: Deploy to server
-      - shell: bash
         env:
           SERVER_URL: ${{ secrets.serverurl }}
         run: |
