@@ -1,5 +1,5 @@
 # Engineering LogBook Project 🔖
-![Django CI](https://github.com/EngineerLogbook/logbook/workflows/Django%20CI/badge.svg)
+![Pull Request CI](https://github.com/EngineerLogbook/logbook/workflows/Pull%20Request%20CI/badge.svg)
 ![Server Deployment](https://github.com/EngineerLogbook/logbook/workflows/Django%20Deployment/badge.svg)
 
 The logbook serves as a repository for all relevant information, meeting summaries, responsibilities, tasks, due dates etc. The design logbook is like a trusted assistant, who helps by recording all that is important and helps prioritize what needs to be done next. The proposed project is to develop a habit of keeping a design logbook. The need is to build a digital logbook app which all students can use during the capstone project to learn what content should be written in a logbook and to develop a habit of keeping an up-to-date logbook.
