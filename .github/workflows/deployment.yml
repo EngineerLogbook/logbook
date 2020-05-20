@@ -1,10 +1,9 @@
-name: Django CI
+name: Django Deployment
 
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  
 
 jobs:
   build:
@@ -39,3 +38,12 @@ jobs:
       run: |
         cd engbook
         python manage.py test
+  release:
+    if: ${{ github.ref == 'master' }}
+    needs: build
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Push to Docker Container
+      run: |
+        curl https://webhook.site/013234df-274b-4de1-88e2-b00f9b3dcccd
