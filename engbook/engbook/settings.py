@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'project',
     'django_extensions',
     'crispy_forms',
-    'user.apps.UserConfig'
+    'user.apps.UserConfig',
+    'sbadmin'
 ]
 
 GRAPH_MODELS = {
