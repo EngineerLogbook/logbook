@@ -1,4 +1,4 @@
-# Engineering Logbook Project Scrum-2
+# Engineering Logbook Project
 
 ![Deployment](https://github.com/EngineerLogbook/scrum-2/workflows/Deployment/badge.svg)
 
