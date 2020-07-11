@@ -1,6 +1,6 @@
-# Engineering LogBook Project 🔖
-![Pull Request CI](https://github.com/EngineerLogbook/logbook/workflows/Pull%20Request%20CI/badge.svg)
-![Server Deployment](https://github.com/EngineerLogbook/logbook/workflows/Django%20Deployment/badge.svg)
+# Engineering Logbook Project Scrum-2
+
+![Deployment](https://github.com/EngineerLogbook/scrum-2/workflows/Deployment/badge.svg)
 
 The logbook serves as a repository for all relevant information, meeting summaries, responsibilities, tasks, due dates etc. The design logbook is like a trusted assistant, who helps by recording all that is important and helps prioritize what needs to be done next. The proposed project is to develop a habit of keeping a design logbook. The need is to build a digital logbook app which all students can use during the capstone project to learn what content should be written in a logbook and to develop a habit of keeping an up-to-date logbook.
 
@@ -10,11 +10,13 @@ The logbook serves as a repository for all relevant information, meeting summari
 The project is to bring significant value to the people who use it and manage capstone projects in our campus.
 The plan is to be something similar to branching and versioning to other engineering projects 
 Currently this project make it simple for you to create logs and add maintain engineering projects and make Teams 
+
 ### Goals :bulb:
 * Personal Logbook cum task organizer.
 * Scalable, secure and collaborative interface for engineers and scientists.
 * Analogous to ```Github``` but also supports non-circuit branches.
 * Project interface to adequately monitor and evaluate group tasks.
+
 ### Proposed Functionalities :chart_with_upwards_trend:
 1. Timelined Daily
    * Logs on the basis of Dates
@@ -94,3 +96,4 @@ We are thankful for the guidance of :
 * [Dr Sanjeev Bedi](https://uwaterloo.ca/engineering-ideas-clinic/people-profiles/sanjeev-bedi-peng) - Professor, University of Waterloo 
 * [Dr Ajay Batish](http://www.thapar.edu/faculties/view/Dr.-Ajay-Batish/MTQy/Nw==) - Professor, Thapar Institute of Engineering & Technology
 * [Mr A S Jawanda](http://thapar.edu/faculties/view/A.-S.-Jawanda/MTU4/MTY=) - Associate Professor, Thapar Institute of Engineering & Technology
+* [Dr Sandeep Sharma](http://thapar.edu/faculties/view/Dr.-Sandeep-Sharma/MTYz/MTY=) - Assistant Professor, Thapar Institute of Engineering & Technology
