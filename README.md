@@ -1,6 +1,10 @@
-# Engineering Logbook Project
+# Engineering Logbook Project w/ React ( Not Maintained )
+
+## Main Repo : [Scrum-2](https://github.com/EngineerLogbook/scrum-2)
 
 ![Deployment](https://github.com/EngineerLogbook/scrum-2/workflows/Deployment/badge.svg)
+
+
 
 The logbook serves as a repository for all relevant information, meeting summaries, responsibilities, tasks, due dates etc. The design logbook is like a trusted assistant, who helps by recording all that is important and helps prioritize what needs to be done next. The proposed project is to develop a habit of keeping a design logbook. The need is to build a digital logbook app which all students can use during the capstone project to learn what content should be written in a logbook and to develop a habit of keeping an up-to-date logbook.
 
