@@ -34,7 +34,7 @@
     "dependencies": {
         "@apollo/react-hooks": "^3.1.5",
         "apollo-boost": "^0.4.7",
-        "axios": "^0.19.2",
+        "axios": "^0.21.1",
         "graphql": "^15.0.0",
         "prop-types": "^15.7.2",
         "react": "^16.13.1",
