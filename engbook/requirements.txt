@@ -1,6 +1,6 @@
 aniso8601==7.0.0
 asgiref==3.2.7
-Django==3.0.5
+Django==3.0.14
 django-crispy==1.8.1
 django-environ==0.4.5
 django-extensions==2.2.9
